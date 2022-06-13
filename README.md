@@ -68,3 +68,5 @@ The first part of this set-up is taken from Ania Kubów. If you'd rather follow 
 ////////
 
 9. Add, commit, and push your changes to your forked repo.
+
+10. Create a folder named '.github/workflows' and create a file inside named 'main.yml'. This will be a path for you to access your workflows from your local. The following instructions will only work for a public github repo.
