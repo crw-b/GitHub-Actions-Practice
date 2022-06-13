@@ -7,9 +7,9 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: crw-b/github-actions-practice
+      uses: crw-b/github-actions-practice@1
       with:
-        who-to-greet: 'Ania'
+        who-to-greet: 'Christina'
     # Use the output from the `hello` step
     - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}""
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
