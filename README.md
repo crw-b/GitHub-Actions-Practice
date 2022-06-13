@@ -86,9 +86,9 @@ $ git tag -a -m 'SOME MESSAGE' v1
 $ git push --follow-tags
 //////
 
-11. Create a folder named '.github/workflows' and create a file inside named 'main.yml'. This will be a path for you to access your workflows from your local. The following instructions will only work for a public github repo.
+11.  Create a folder named '.github' with a folder named 'workflows' inside and create a file inside that nested folder named 'main.yml'. This will be a path for you to access your workflows. The following instructions will only work for a public github repo.
 
-12. Inside of main you will paste the following code:
+12.  Inside of main you will paste the following code:
 
 ////
 
@@ -112,4 +112,4 @@ jobs:
 
 Be sure to replace 'YOUR-GITHUB-USERNAME' with your github username so that the action can follow the correct path and you can replace YOUR NAME HERE with whatever variable you want to pass through.
 
-12. 
+12. Add, commit, and push these new changes to your git repo. You should then be able to view the actions and the results from the actions tab in your GitHub repo.
