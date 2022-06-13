@@ -8,18 +8,26 @@ The first part of this set-up is taken from Ania Kubów. If you'd rather follow 
 1. Fork and clone this repo onto your local machine.
 
 2. Move into the GitHub-Actions-Practice directory you created and make a new package.json for this project by typing the following into your terminal:
+
+/////
    $ npm init -y
 
 3. Create a directory for your actions by typing the following into your terminal:
+
+/////
    $ touch action.yml
 
 4. Install @actions/github by entering into your terminal:
+
+////
    $ npm install @actions/github
 
-4. Install @actions/core by entering into your terminal:
+5. Install @actions/core by entering into your terminal:
+
+////
    $ npm install @actions/core
 
-5. Open up the action.yml file and paste the following sample code from GitHub Docs:
+6. Open up the action.yml file and paste the following sample code from GitHub Docs:
 
 /////
 
@@ -35,7 +43,6 @@ The first part of this set-up is taken from Ania Kubów. If you'd rather follow 
     runs:
         using: 'node12'
         main: 'index.js'
-
 //////
 
     Notice that both who-to-greet and time are variables that are set to the id of input and output, respectively. We are able to use variables here because we downloaded @actions/core allowing multiple action files to interact.
@@ -69,4 +76,39 @@ The first part of this set-up is taken from Ania Kubów. If you'd rather follow 
 
 9. Add, commit, and push your changes to your forked repo.
 
-10. Create a folder named '.github/workflows' and create a file inside named 'main.yml'. This will be a path for you to access your workflows from your local. The following instructions will only work for a public github repo.
+
+10. Then, you will want to tag this action so you can reference it later. Type the following into your terminal with any message you'd like (the v1 is what we'll actually reference the tag with):
+
+///////
+$ git tag -a -m 'SOME MESSAGE' v1
+//////
+$ git push --follow-tags
+//////
+
+11. Create a folder named '.github/workflows' and create a file inside named 'main.yml'. This will be a path for you to access your workflows from your local. The following instructions will only work for a public github repo.
+
+12. Inside of main you will paste the following code:
+
+////
+
+ on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+    - name: Hello world action step
+      id: hello
+      uses: YOUR-GITHUB-USERNAME/github-actions-practice@v1
+      with:
+        who-to-greet: 'YOUR NAME HERE'
+    # Use the output from the `hello` step
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
+
+/////
+
+Be sure to replace 'YOUR-GITHUB-USERNAME' with your github username so that the action can follow the correct path and you can replace YOUR NAME HERE with whatever variable you want to pass through.
+
+12. 
