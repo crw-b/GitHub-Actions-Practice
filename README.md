@@ -45,14 +45,15 @@ The first part of this set-up is taken from Ania Kubów. If you'd rather follow 
         main: 'index.js'
 //////
 
-    Notice that both who-to-greet and time are variables that are set to the id of input and output, respectively. We are able to use variables here because we downloaded @actions/core allowing multiple action files to interact.
+Notice that both who-to-greet and time are variables that are set to the id of input and output, respectively. We are able to use variables here because we downloaded @actions/core allowing multiple action files to interact.
 
 6. Since the action we just created runs on 'index.js', we will need to add an index.js file to our directory.
 
 7. Call @actions/core and @actions/github within index.js with the following code at the top of the file:
 
-    const core = require('@actions/core');
-    const github = require('@actions/github');
+////
+const core = require('@actions/core');
+const github = require('@actions/github');
 
 8. Copy and paste the sample code into your new index.js file.
 
