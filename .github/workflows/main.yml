@@ -3,11 +3,10 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-
     steps:
       - name: Hello world action step
         id: hello
-        uses: crw-b/github-actions-practice@v1
+        uses: crw-b/github-actions-practice@v0
         with:
           who-to-greet: 'Christina'
     # Use the output from the `hello` step
