@@ -3,11 +3,11 @@ description: 'Greet someone and record'
 runs-on: ubuntu-latest
   inputs:
     who-to-greet: # id of input
-    required: true
-    default: 'World'
+      required: true
+      default: 'World'
   outputs:
     time: # id of output
-    description: 'The time we greeted you'
+      description: 'The time we greeted you'
   runs:
     uses: 'node12'
     main: 'index.js'
