@@ -2,12 +2,11 @@ name: 'Hello World'
 description: 'Greet someone and record'
 runs-on: ubuntu-latest
   inputs:
-    who-to-greet: # id of input
-      required: true
+    who-to-greet:
       default: 'World'
   outputs:
-    time: # id of output
+    time:
       description: 'The time we greeted you'
   runs:
-    uses: 'node12'
+    using: 'node12'
     main: 'index.js'
