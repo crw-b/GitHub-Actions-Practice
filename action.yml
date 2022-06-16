@@ -9,5 +9,5 @@ runs-on: ubuntu-latest
     time: # id of output
     description: 'The time we greeted you'
   runs:
-    using: 'node12'
+    uses: 'node12'
     main: 'index.js'
